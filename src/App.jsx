@@ -22,7 +22,7 @@ const App = (props) => {
   const noteFormRef = useRef()
 
   const hook = () => {
-    console.log("effect")
+    // console.log("effect")
     noteService.getAll().then((initialData) => {
       // console.log(response)
       setNotes(initialData)
@@ -64,13 +64,13 @@ const App = (props) => {
   }
 
   const addNote = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     console.log("button clicked", e.target)
     // create new note object
     const noteObject = {
       content: newNote,
       date: new Date().toISOString(),
-      important: Math.random() < 0.5,
+      important: "sfg",
       id: notes.length + 1,
     }
 
@@ -91,6 +91,7 @@ const App = (props) => {
       setPassword("")
     } catch (err) {
       setErrorMessage("WRong credentials")
+      console.log(err)
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
@@ -129,7 +130,7 @@ const App = (props) => {
         </Togglable>
       ) : (
         <div>
-          <p>{user.name} logged in</p>
+          <p>{user.username} logged in</p>
           <Togglable buttonLabel="new note">
             <NoteForm createNote={addNote} />
           </Togglable>
