@@ -1,11 +1,17 @@
 describe("Note App", function () {
+  // beforeEach(function () {
+  //   cy.visit("http://localhost:3000")
+  //   cy.contains("login").click()
+  //   cy.get("#username").type("param")
+  //   cy.get("#password").type("test")
+  //   cy.get("#login-button").click()
+  // })
+
+  // we created a custom command to login Cypress/commands.js
   beforeEach(function () {
-    cy.visit("http://localhost:3000")
-    cy.contains("login").click()
-    cy.get("#username").type("param")
-    cy.get("#password").type("test")
-    cy.get("#login-button").click()
+    cy.login({ username: "adfsa", password: "adsfasf" })
   })
+
   // it("front page can be opened", function () {
   //   cy.contains("Notes")
   //   cy.contains("Filter list")
@@ -41,8 +47,8 @@ describe("Note App", function () {
   //   cy.contains("Save").click()
   // })
 
-  it("change important", function () {
-    // cy.contains("Html is easy").contains("note is important").click()
-    // cy.contains("test").contains("make note important").click()
-  })
+  // it("change important", function () {
+  // cy.contains("Html is easy").contains("note is important").click()
+  // cy.contains("test").contains("make note important").click()
+  // })
 })
